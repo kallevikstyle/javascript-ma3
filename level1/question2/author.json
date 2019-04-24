@@ -1,4 +1,4 @@
-{
+authorInfo({
 	"video": [{
 		"id": 12312412312,
 		"name": "Ecuaciones Diferenciales",
@@ -11,4 +11,4 @@
 			}]
 		}
 	}]
-}
+});
