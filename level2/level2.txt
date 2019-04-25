@@ -3,19 +3,48 @@ JavaScript MA03
 Level 2
 
 1. In your own words, describe what JavaScript Code Style is.
+	Style is about finding your personal style of coding and sticking with it.
+	I think it's important to keep conventions and a consistent style so that it be easy to read the code later – 
+	both for yourself and other developers. If you for example are sloppy with indentation, brackets or semicolons, the script might be easy to misinterpret.
 
 2. What is a Regular Expression?
-
+	A regular expression is a specific pattern a developer can define, to test that a string meets certain requirements. It is commonly used to test user input strings, in order to protect the script against values that can potentially cause serious errors or miscalculations.
 3. What does the .random() method do?
-
+	.random() is a method of the Math object, and will return a random number between 0 an 1.
 4. What does the .sort() method do?
-
+	.sort() will sort the contents of an array. It treats all items as strings, so in order for it to work well with sorting numbers, it needs some manipulation.
 5. What does the .reverse() method do?
-
+	.reverse() will reverse the order of the items in an array.
 6. List two examples of bad JavaScript code.
+	Example 1: The first example I want to mention is actually my first approach to level 1 question 2, where I accessed a JSON file and logged out the contents. I ended up nesting 6 'for loops', which is not good at all and almost drove me crazy in the process. Here is the code:
+			function authorInfo(authorData) {
+			let i = 0,
+				x = 0;
+			
+			for (i = 0; i < authorData["video"].length; i++) {
+				for (videoKey in authorData["video"][i]) {
+					if (typeof authorData["video"][i][videoKey] !== "object") {
+						console.log("Video " + videoKey + ": " + authorData["video"][i][videoKey]);
+					} else {
+						for (authorKey in authorData["video"][i][videoKey]) {
+							for (x = 0; x < authorData["video"][i][videoKey][authorKey].length; x++) {
+								for (authorDataKey in authorData["video"][i][videoKey][authorKey])
+									console.log("Info about author:")
+									for (authorDataObjectKey in authorData["video"][i][videoKey][authorKey][authorDataKey]) {
+										console.log(authorDataObjectKey + 
+											": " + 
+											authorData["video"][i][videoKey][authorKey][authorDataKey][authorDataObjectKey]);
+									}
+							}
+						}
+					}
+				}
+			}
+		}
 
+	Example 2: Using too many variables in the global scope. This can cause overriding and confusion, and should be avoided.
 7. What data types can a JSON object contain?
-
+	It can contain all data types that a regular object can, except for functions. That is strings, numbers, objects and booleans.
 8. What is minifying JavaScript Code?
 
 9. What is a global variable?
