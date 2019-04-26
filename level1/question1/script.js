@@ -1,9 +1,10 @@
 function validateInfo() {
 	const regExPhone = /^[0-9]{8}$/,
-		  regExEmail = /^[a-z0-9.-_]+@[a-z0-9-]+\.[a-z.]{2,5}$/i;
+		  regExEmail = /^[a-z0-9.-_]+@[a-z0-9-]+\.[a-z.]{2,5}$/i,
+		  regExName = /^[a-z ]+$/i;
 	let validHuman = {
-		"first name": 		(document.getElementById('firstname').value !== ""),
-		"last name": 		(document.getElementById('lastname').value !== ""),
+		"first name": 		regExName.test(document.getElementById('firstname').value),
+		"last name": 		regExName.test(document.getElementById('lastname').value),
 		"phone number": 	regExPhone.test(document.getElementById('phone').value),
 		"e-mail": 			regExEmail.test(document.getElementById('email').value)  
 	},
